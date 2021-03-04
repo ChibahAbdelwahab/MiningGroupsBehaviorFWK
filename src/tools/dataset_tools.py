@@ -1,8 +1,19 @@
+from ast import literal_eval
+
+from src.settings import settings
+
+
 def get_items_descriptions(x, items):
     """
     Returns a list of items description from a list of items ids
     """
-    x = x.replace(".0", "")
-    if isinstance(x, int) or isinstance(x, float):
-        x = str(x).replace(".0", " ")
-    return items.loc[[int(i) for i in x.split()]].description.tolist()
+    return items.loc[[int(i) for i in x if i != 'None' and i in items.index]].description.tolist()
+
+
+if __name__ == "__main__":
+    import pandas as pd
+
+    df = pd.read_csv("/home/abdelouahab/PFE/lcm-tests/datasets/Total/transactions2.csv")
+    df.columns = map(str.lower, df.columns)
+    df = df.rename(columns={"cust_id": "customer_id"})
+    df.to_sql("transactions", if_exists="replace", index=None, con=settings.engine)

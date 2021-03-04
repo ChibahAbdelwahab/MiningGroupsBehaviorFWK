@@ -1,7 +1,7 @@
 import pytest
 
-from core.data_api.dataset_handler import DatasetHandler
-from settings.settings import TRANSACTIONS_TABLE_FIELDS
+from src.core.data_api.dataset_handler import DatasetHandler
+from src.settings.settings import TRANSACTIONS_TABLE_FIELDS
 
 
 def test_data():

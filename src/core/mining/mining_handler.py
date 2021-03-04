@@ -1,8 +1,13 @@
-from settings.settings import RESULTS_FOLDER
+from sqlalchemy import create_engine
+
+from src.settings.settings import RESULTS_FOLDER, DATABASE_URL
 
 
 class MiningHandler:
     """ This Class gives an api to use LCM algorithm """
+
+    def __init__(self):
+        self.engine = create_engine(DATABASE_URL)
 
     def dataset_property_split(self, df, frequency, properties, min_support, groupby_property="customer_id",
                                itemset_property="item_id", ):

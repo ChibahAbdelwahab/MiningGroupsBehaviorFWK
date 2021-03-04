@@ -1,5 +1,7 @@
 import os
 
+from sqlalchemy import create_engine
+
 NB_THREADS = 8
 
 # Path
@@ -21,3 +23,6 @@ CUSTOMERS_TABLE_FIELDS = ["customer_id", "sex", "age", "departement"]
 ITEMS_TABLE_FIELDS = ["description", "item_id"]
 
 GROUPS_DEMOGRAPHICS = ["STATION_MGT_TYPE", "DEPARTEMENT"]
+
+DATABASE_URL = "postgresql://miningAgent:@localhost/QeNoBi"
+engine = create_engine(DATABASE_URL)

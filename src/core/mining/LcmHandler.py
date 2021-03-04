@@ -1,3 +1,4 @@
+import json
 import os
 import subprocess
 import sys
@@ -6,8 +7,10 @@ from multiprocessing import Pool
 
 import pandas as pd
 
+from src.core.data_api.dataset_handler import DatasetHandler
 from src.core.mining.mining_handler import MiningHandler
 from src.settings.settings import *
+from src.tools.dataset_tools import get_items_descriptions
 
 
 class LcmHandler(MiningHandler):
@@ -45,6 +48,9 @@ class LcmHandler(MiningHandler):
         """
         Reformat default output of lcm  to a dataframe with structure : min_support,itemsets,users
         """
+        # TODO remove dependency to DatasetHandler
+        self.dh = DatasetHandler()
+        items = self.dh.get_items()
         output = pd.DataFrame([raw_result[0::2], raw_result[1::2]]).T
         output = pd.concat([output.drop(0, axis=1), output[0].str.split('\(([0-9]+)\)', expand=True).drop(0, axis=1)],
                            axis=1)
@@ -52,11 +58,14 @@ class LcmHandler(MiningHandler):
         output["period"] = split_name.split("_")[0]
         output["property_values"] = "_".join(split_name.split("_")[1:]).split("#")[0]
         output.columns = ["customer_id", "support", "itemset", "period", "property_values"]
+        output["itemset"] = output["itemset"].apply(lambda x: str(x).split())
+        output["itemset_name"] = output["itemset"].apply(
+            lambda x: get_items_descriptions(x, items))
         indexes = pd.read_csv(f'{TMP_FOLDER}/index/{split_name}', header=None)[0].to_dict()
         output["customer_id"] = output["customer_id"].fillna("").map(lambda x: [indexes[int(i)] for i in x.split()])
         return output
 
-    def run_lcm(self, split_name, itemsets_size, support, output_file):
+    def run_lcm(self, split_name, itemsets_size, support, exp_params):
         """Runs LCM (Single Thread)  and return the  result formated with format_output
 
         Example for parameters : input_file='1999',support=6, itemsets_size=[5,100]
@@ -74,10 +83,9 @@ class LcmHandler(MiningHandler):
             Replace file having name input_file with the result : support,itemset,users
             if no itemset found the input_file is deleted and output is empty string ""
         """
-
         support = int(support)
         if None in itemsets_size:
-            command = f"""./ {LCM_EXECUTABLE} C_QI - l {itemsets_size[0]} "{split_name}" {support} -"""
+            command = f"""{LCM_EXECUTABLE} C_QI -l {itemsets_size[0]} "{split_name}" {support} -"""
         else:
             command = f"""{LCM_EXECUTABLE} C_QI -l {itemsets_size[0]} -u {itemsets_size[1]} "{split_name}" {support} -"""
         try:
@@ -90,18 +98,11 @@ class LcmHandler(MiningHandler):
             print("No itemset", split_name)
             return
 
-        # TODO Optimize bottleneck
-        with open(output_file, "a+") as file:
-            self.reformat_output(result, split_name).to_csv(file, header=False, index=None, mode="a+")
+        df = self.reformat_output(result, split_name)
+        for i in exp_params:
+            df[i] = exp_params[i]
+        df.to_sql("Groups", if_exists="append", index=None, con=self.engine)
         return split_name
-
-    def multithread_lcm(self, df, frequency, support, itemsets_size, properties, output_file):
-        f = partial(self.run_lcm, itemsets_size=itemsets_size, support=support, output_file=output_file)
-        p = Pool(NB_THREADS)
-        res = p.imap_unordered(f, self.dataset_property_split(df, frequency, properties, support))
-        p.close()
-        p.join()
-        return res
 
     def linear_closed_itemset_miner(self, df, frequency, min_support, itemsets_size, properties):
         output_file = self.format_output_name(frequency, min_support, itemsets_size, properties)
@@ -120,3 +121,14 @@ class LcmHandler(MiningHandler):
         print(f'---| #split having groups: {len(a)}')
         print(f'---| Average: {len(a) / total}')
         print(" ")
+
+    def run(self, df, frequency, support, itemsets_size, properties, exp_params, overwrite=False):
+        exp_id = exp_params["sankey_experiment_id"]
+
+        if overwrite:
+            self.engine.execute(f""" Delete from "Groups" where sankey_experiment_id='{exp_id}' """)
+
+        pd.DataFrame([exp_params]).to_sql("sankey_experiment", if_exists="replace", index=False, con=self.engine)
+        data_generator = self.dataset_property_split(df, frequency, properties, support)
+        for i in data_generator:
+            self.run_lcm(i, itemsets_size=itemsets_size, support=support, exp_params=exp_params)

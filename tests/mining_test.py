@@ -1,11 +1,7 @@
 import os
+from functools import partial
 
 import pytest
-
-from core.data_api.dataset_handler import DatasetHandler
-from core.mining.LcmHandler import LcmHandler
-from tools.lcm_tools import read_lcm_output
-
 
 # @pytest.mark.parametrize("frequency, min_support, properties,itemsets_size",
 #                          [("M", 12, ["sex"], [1, 2]), ("3M", 2, ["sex", "age"], [1, 2])])
@@ -39,6 +35,9 @@ from tools.lcm_tools import read_lcm_output
 #     output_file = lh.format_output_name(frequency, min_support, itemsets_size, properties)
 #     lh.run_lcm(splits[1], itemsets_size, min_support, output_file)
 #     assert os.path.isfile(output_file)
+from src.core.data_api.dataset_handler import DatasetHandler
+from src.core.mining.LcmHandler import LcmHandler, NB_THREADS
+from src.tools.lcm_tools import read_lcm_output
 
 
 @pytest.mark.parametrize("frequency, min_support, properties,itemsets_size",
@@ -50,10 +49,30 @@ def test_run_multi_thread_lcm(frequency, min_support, properties, itemsets_size)
     df = dh.get_data()
     output_file = lh.format_output_name(frequency, min_support, itemsets_size, properties)
     lh.multithread_lcm(df, frequency, min_support, itemsets_size, properties, output_file)
-    assert os.path.isfile(output_file)
-    print(output_file)
-    read_lcm_output(output_file.split("/")[-1])
+
+
+def experiment_name(exp_params):
+    name = "_".join(f"{j}" for i, j in exp_params.items())
+    name = name.replace("'", "").replace('"', "")
+    return name
 
 
 if __name__ == '__main__':
-    pytest.main(["-vv", __file__])
+    dh = DatasetHandler()
+    lh = LcmHandler()
+    df = dh.get_data()
+    df = df.rename(columns={"article_id": "item_id"})
+    frequency = "M"
+    support = 10
+    properties = ["sex"]
+    itemsets_size = [1, None]
+    exp_params = {
+        "dataset": "Retail",
+        "time_granularity": frequency,
+        "support": support,
+        "properties": str(properties),
+        "itemsets_size": str(itemsets_size),
+    }
+    exp_params["sankey_experiment_id"] = experiment_name(exp_params)
+    exp_params["sankey_experiment_id"].replace("'", '')
+    lh.run(df, frequency, support, itemsets_size, properties, exp_params, overwrite=False)

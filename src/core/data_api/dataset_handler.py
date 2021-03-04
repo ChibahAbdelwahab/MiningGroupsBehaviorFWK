@@ -1,10 +1,12 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
+from src.settings.settings import DATABASE_URL
+
 
 class DatasetHandler:
     def __init__(self):
-        self.engine = create_engine("postgresql://miningAgent:@localhost/QeNoBi")
+        self.engine = create_engine(DATABASE_URL)
 
     def split_dataset(input_file, frequency, dataset_filter):
         """Split initial dataset to multiple files according to frequency
@@ -37,6 +39,7 @@ class DatasetHandler:
         df = pd.read_sql(query, con=self.engine).drop_duplicates()
         df.index = pd.to_datetime(df.transaction_date)
         df = df.loc[:, ~df.columns.duplicated()]
+        print(df.shape)
         return df
 
     def get_items(self):

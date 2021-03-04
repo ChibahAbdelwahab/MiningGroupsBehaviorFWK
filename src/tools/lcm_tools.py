@@ -1,11 +1,25 @@
-import pandas as pd
+from ast import literal_eval
 
-from settings.settings import RESULTS_FOLDER
+import pandas as pd
+from sqlalchemy import create_engine
+
+from src.settings.settings import RESULTS_FOLDER, DATABASE_URL
 
 
 def read_lcm_output(input_name, columns=["user_ids", "support", "itemsets", "period", "property_values"]):
     """Read and restructure LCM output file,rename columns output a df """
-    file = f'{RESULTS_FOLDER}/{input_name}'
+    engine = create_engine(DATABASE_URL)
+    query = f"""
+            Select * from "Groups" where sankey_experiment_id='{input_name}'
+    """
+    df = pd.read_sql(query, con=engine)
+    df = df.rename(columns={"customer_id": "user_ids"})
+    print(df.columns)
+
+    df["period"] = pd.to_datetime(df["period"])
+    df["user_ids"] = df.user_ids.apply(literal_eval)
+    return df
+
     try:
         df = pd.read_csv(file, header=None)
     except:

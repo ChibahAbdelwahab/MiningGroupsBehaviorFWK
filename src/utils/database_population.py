@@ -7,7 +7,9 @@ from sqlalchemy import create_engine
 
 from settings.settings import CUSTOMERS_TABLE_FIELDS, ITEMS_TABLE_FIELDS, TRANSACTIONS_TABLE_FIELDS
 
-engine = create_engine("postgres://miningAgent:@localhost/QeNoBi")
+from src.settings.settings import DATABASE_URL
+
+engine = create_engine(DATABASE_URL)
 
 ### Generate transactions
 nb_transactions = 1000
