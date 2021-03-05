@@ -26,4 +26,4 @@ def run_mining():
 
 
 if __name__ == "__main__":
-    print(settings.TMP_FOLDER)
+    run_mining()

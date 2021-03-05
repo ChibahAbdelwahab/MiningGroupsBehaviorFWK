@@ -8,7 +8,7 @@ NB_THREADS = 8
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Path
-LCM_EXECUTABLE = os.path.join(BASE_DIR, "lcm")
+LCM_EXECUTABLE = os.path.join(BASE_DIR, "bin/lcm")
 
 OUTPUT_FOLDER = os.path.join(BASE_DIR, 'output')
 TMP_FOLDER = os.path.abspath(f"{OUTPUT_FOLDER}/tmp")
@@ -28,6 +28,6 @@ ITEMS_TABLE_FIELDS = ["description", "item_id"]
 
 GROUPS_DEMOGRAPHICS = ["STATION_MGT_TYPE", "DEPARTEMENT"]
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
+DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://miningAgent:@localhost/QeNoBi")
 engine = create_engine(DATABASE_URL)
 LINKS_TABLE = "Links"
