@@ -1,0 +1,169 @@
+.tableFixHead thead th {
+    position: sticky;
+    top: 0;
+}
+
+.tableFixHead {
+    overflow-y: auto;
+    height: 400px;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.btn-group > .btn-group:not(:first-child) > .btn, .btn-group > .btn:not(:first-child) {
+}
+
+
+* {
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+    overflow: hidden
+}
+
+nav .navbar-nav li {
+    color: blue;
+}
+
+body {
+    background-color: black !important;
+    height: 100vh;
+}
+
+#wrapper {
+    background-color: white;
+}
+
+.sidebar-elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.sidebar-elem div {
+    width: 85%;
+}
+
+.sidebar-elem div > p {
+    margin-bottom: 1px;
+    font-size: 20px;
+}
+
+.dataset-buttons > button {
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 2px;
+    font-size: 22px;
+    border-color: white;
+}
+
+.dataset-button1 :hover {
+
+}
+
+.dataset-button2 {
+
+}
+
+select {
+    width: 100%;
+}
+
+.project-tab {
+    padding: 10%;
+    margin-top: -8%;
+}
+
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
+    font-size: 25px;
+}
+
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: transparent !important;
+    border-top: 2px solid #005086 !important;
+    border-left: 2px solid #005086 !important;
+    border-right: 2px solid #005086 !important;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.project-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.project-tab .nav-link:hover {
+    border: none;
+}
+
+
+.project-tab a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.tab-pane.active {
+    border: black !important;
+}
+
+.chart-container {
+    border: 3px solid #318fb5 !important;
+    box-shadow: #1c294e;
+}
+
+.tabscontent {
+    border-left: 5px solid #005086;
+}
+
+.query-input {
+    border-radius: 20px;
+    border: 2px solid #005086;
+    margin: 0 0 0 2px;
+    padding: 0px;
+
+}
+
+
+.query-input p {
+    color: black;
+    opacity: 1;
+    font-size: 18px;
+}
+
+.query-input select {
+    color: white;
+}
+
+.query-input > .sidebar-elem {
+    margin-bottom: 1px;
+}
+
+.query-input img {
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 0;
+    margin: 0;
+}

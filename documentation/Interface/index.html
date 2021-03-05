@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <title>QeNoBi</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="assets/fonts/fontawesome-all.min.css" rel="stylesheet">
+    <link href="assets/css/untitled.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"
+          rel="stylesheet"/>
+    <link href="jquery.range.css" rel="stylesheet">
+    <script src="jquery.range.js">
+    </script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet"/>
+</head>
+
+<body class="text-dark " id="page-top">
+<div class="h-100   " id="wrapper" style="height: 100vh;">
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion p-0 h-100"
+         style="background: #005086">
+        <div class="container-fluid d-flex flex-column p-0">
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="">
+                <div class="sidebar-brand-text mt-5 ">
+                    <p class="mt-5" style="font-size: 42px;">QeNoBi</p>
+                </div>
+            </a>
+            <div class="nav mt-5 navbar-nav text-light w-100 h-100" id="accordionSidebar">
+                <div class="row m-0 p-0 w-100">
+                    <div class="col m-2 ml-4 mt-0 mb-5 p-0 w-100">
+                        <p class="mb-1" style="font-size: 30px;">Dataset</p>
+                        <div class=" dataset-buttons text-white" style="width: 90%">
+                            <button class="dataset-button1 text-white bg-transparent active " type="button">Retail
+                            </button>
+                            <button class="dataset-button2 text-white bg-transparent border-0 " type="button">Amazon
+                            </button>
+                        </div>
+                    </div>
+                    <hr class="bg-white w-75 mr-3 ml-3 mb-1 mt-1">
+                    <div class="customercentric row text-black align-items-center justify-content-center w-100 text-white p-0 m-0"
+                         id="customer-centric-selection">
+                        <div class="sidebar-elem">
+                            <div>
+                                <p style="font-size: 30px;">Sankey</p>
+                            </div>
+                            <div>
+                                <p>Demographics</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected value="13">Gender</option>
+                                    <option selected value="">Age</option>
+                                    <option value="">Location</option>
+                                    <option value="">Occupation</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Product</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected value="13">Category</option>
+                                    <option value="">Price</option>
+                                    <option value="">Name</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Support</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <optgroup label="Male">
+                                        <option selected="" value="12">10</option>
+                                        <option value="13">This is item 2</option>
+                                        <option value="14">This is item 3</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p> Time granularity</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected="" value="12">Monthly</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Min products</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected="" value="12">3</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Max products</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <optgroup label="Male">
+                                        <option selected="" value="12">10</option>
+                                        <option value="13">This is item 2</option>
+                                        <option value="14">This is item 3</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productcentric row text-black align-items-center justify-content-center w-100 text-white p-0 m-0"
+                         id="product-centric-selection" style="display: none">
+                        <div class="sidebar-elem">
+                            <div>
+                                <p style="font-size: 30px;">Time series</p>
+                            </div>
+                            <div>
+                                <p>Product category</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected="" value="12">Hand Sanitizer</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Product name</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected="" value="12">Beauty&Health</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Granularity</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected="" value="12">Weekly</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Customers</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected="" value="12">120 Males, <35</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="d-flex flex-column h-100 m-3 mt-4 bg-transparent" id="content-wrapper">
+        <div class="row m-1 p-0">
+            <nav class="shadow">
+                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                    <a aria-selected="true" class="nav-item  text-dark nav-link active" data-toggle="tab"
+                       href="#tab-1" id="customer-centric-tab"
+                       role="tab">Customer-Centric</a>
+                    <a aria-selected="false" class="nav-item  text-dark nav-link" data-toggle="tab" href="#tab-2"
+                       id="product-centric-tab" role="tab">Product-Centric</a>
+                </div>
+            </nav>
+            <div class="col-12 tabscontent p-0 tab-content  ">
+                <div class="tab-pane active p-0 shadow-lg " id="tab-1" role="tabpanel">
+                    <div class="row m-auto align-items-center ">
+                        <div class="col-10 p-0 " id="sankeyDiagram"
+                             style="position:relative; height: 55vh;min-width: 200px">
+                        </div>
+                        <div class="col-2   ">
+                            <div class="col mt-4 mb-4 border-primary">
+                                <h3 class="text-center text-primary p-0 ">Group details</h3>
+                            </div>
+                            <div class="table table-sm table-striped   text-dark pr-3">
+                                <table class="table">
+                                    <thead class="indigo text-dark">
+                                    </thead>
+                                    <tbody>
+                                    <tr class="text-dark">
+                                        <th class="">ID</th>
+                                        <td>G7</td>
+                                    </tr>
+                                    <tr class="text-dark">
+                                        <th class="">Description</th>
+                                        <td>14 Males,&lt;35, Hand Sanitizer</td>
+                                    </tr>
+                                    <tr class="text-dark">
+                                        <th class="">Period</th>
+                                        <td>Oct 2017</td>
+                                    </tr>
+                                    <tr class="text-dark">
+                                        <th class="">#Incoming links</th>
+                                        <td class="">2</td>
+                                    </tr>
+                                    <tr class="text-dark">
+                                        <th class="">#Outgoing links</th>
+                                        <td class="">4</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane p-0 shadow-lg productcentric" id="tab-2" role="tabpanel">
+                    <div class="row w-100">
+                        <div class="col-12 " style="width: 100%">
+                            <strong class="col-2 text-black-50t">Smoothing Iteration : </strong>
+                            <span class="col-1" id="smoothIterationValue">0</span>
+                            <input id="smoothingIterationPicker" max="10" min="0" type="range" value="0">
+
+                        </div>
+                        <div class="col-12 w-100 h-100" id="timeSeries"
+                             style="position:relative;height: 55vh">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row tabscontent  h-100 mb-3   pb-4">
+            <div class="col-8 h-100" style="background: white">
+                <div class="row w-100 m-0 p-0">
+                    <div class="col-12 p-0 m-2">
+                        <h3 class="customercentric text-center text-primary p-0">
+                            Query on Sankey</h3>
+                        <h3 class="productcentric text-center text-primary p-0">
+                            Query on time series </h3>
+                    </div>
+                    <div class="col query-input">
+                        <p class="ml-1" style="font-size: 25px;">Shape</p>
+                        <div class="w-100 justify-content-center align-items-center m-4">
+                            <img class="productcentric img-fluid img-responsive  p-0 m-0"
+                                 src="assets/img/query.png">
+                            <img class="customercentric img-fluid img-responsive p-0 m-0 "
+                                 src="assets/img/graph_query_sample.png">
+                        </div>
+                    </div>
+                    <div class="col query-input">
+                        <p class="ml-1" style="font-size: 25px;">Customers</p>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Gender</p>
+                            </div>
+                            <div>
+                                <select class=" form-control text-dark">
+                                    <option selected="" value="12">Male</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Age</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected="" value="12"><35</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div><p>Location</p></div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected="" value=""></option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Occupation</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option value="12">Student</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col query-input">
+                        <p class="ml-1" style="font-size: 25px;">Products</p>
+
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Category</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <optgroup label="Male">
+                                        <option selected="" value="12">ALL</option>
+                                        <option value="13">This is item 2</option>
+                                        <option value="14">This is item 3</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Name</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option value="12">Hand Sanitizer/</option>
+                                    <option value="13">This is item 2</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col query-input">
+                        <p class="ml-1" style="font-size: 25px;">Time</p>
+                        <div class="sidebar-elem">
+
+                            <div>
+                                <p>Time span</p>
+                            </div>
+                            <div>
+                                <select class="form-control" multiple="multiple">
+                                    <option selected="" value="12">4 (Weeks)</option>
+                                    <option value="13">2 (weeks)</option>
+                                    <option value="14">This is item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sidebar-elem">
+                            <div>
+                                <p>Tolerance</p>
+                            </div>
+                            <div>
+                                <select class="form-control text-dark">
+                                    <option selected="" value="12">±30 (days)</option>
+                                    <option value="13">±2 (days)</option>
+                                    <option value="14">±10 (days)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col card h-100 w-100 m-0 ml-1">
+                <h3 class="col-12 text-center text-primary p-2 m-2 ">Query Results</h3>
+                <div class="tableFixHead customercentric table-responsive table indigo text-dark  h-100 p-0"
+                     id="resultsSankey">
+                    <table class="table  table-striped table-sm ">
+                        <thead class="text-dark">
+                        <tr>
+                            <th>Group</th>
+                            <th>Description</th>
+                            <th>Period</th>
+                        </tr>
+                        </thead>
+                        <tbody class="text-dark ">
+                        <tr>
+                            <td>G0</td>
+                            <td>9 Males, &lt;35, COCA COLA &amp; CHOCOLATE BAR</td>
+                            <td>Jan 2017</td>
+                        </tr>
+                        <tr>
+                            <td>G7</td>
+                            <td>14 Males, <35, Hand Sanitizer</td>
+                            <td>Oct 2017</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tableFixHead productcentric table-responsive table indigo text-dark  h-100 p-0"
+                     id="resultsTimeSeries">
+                    <table class="table table-striped w-100">
+                        <thead class="text-dark">
+                        <tr>
+                            <th>Score</th>
+                            <th>Period</th>
+                            <th>#Customers</th>
+                            <th>Duration</th>
+                        </tr>
+                        </thead>
+                        <tbody class="text-dark">
+                        <tr>
+                            <td>0.21</td>
+                            <td>24 Sep 2017</td>
+                            <td>28</td>
+                            <td> 13 Weeks</td>
+                        </tr>
+                        <tr>
+                            <td>0.55</td>
+                            <td>31 Dec 2018</td>
+                            <td>31</td>
+                            <td>4 Weeks</td>
+                        </tr>
+                        <tr>
+                            <td>0.83</td>
+                            <td>Jul 2017</td>
+                            <td>20</td>
+                            <td>5 Weeks</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<script src="assets/js/jquery.min.js">
+</script>
+<script src="assets/bootstrap/js/bootstrap.min.js">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.4/randomColor.js">
+</script>
+<script src="assets/js/echarts.js">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js">
+</script>
+<script src="assets/js/theme.js">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+<script src="assets/js/ui_interactions.js">
+</script>
+<script src="assets/js/sankeyDiagram.js">
+</script>
+<script src="assets/js/timeSeries.js">
+</script>
+<script>
+    let a = document.getElementById('smoothingIterationPicker')
+    a.oninput = function () {
+        document.getElementById('smoothIterationValue').innerHTML = this.value
+    }
+</script>
+</body>
+
+</html>
