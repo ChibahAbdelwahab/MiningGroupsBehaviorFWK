@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f328d027-7008-460f-9a3f-ce64fe1c2556" name="Default Changelist" comment="library configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lcm" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lcm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mining_groups_behavior/core" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mining_groups_behavior" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,14 +53,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mining_groups_behavior" />
       <recent name="$PROJECT_DIR$/mining_groups_behavior/core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/mining_groups_behavior" />
+      <recent name="$PROJECT_DIR$/mining_groups_behavior/tools" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.mining_test">
+  <component name="RunManager" selected="Python.handler">
     <configuration name="dataset_handler_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MiningGroupsBehaviorFWK" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,6 +99,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/tools/dataset_tools.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="handler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MiningGroupsBehaviorFWK" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mining_groups_behavior" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mining_groups_behavior/handler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,6 +175,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.handler" />
         <item itemvalue="Python.mining_test" />
         <item itemvalue="Python.sankey_generator_test" />
         <item itemvalue="Python.dataset_tools" />
@@ -176,7 +201,7 @@
       <workItem from="1614870697837" duration="66000" />
       <workItem from="1614871630539" duration="649000" />
       <workItem from="1614930856030" duration="615000" />
-      <workItem from="1614939981614" duration="9757000" />
+      <workItem from="1614939981614" duration="11362000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1614697547412</created>
@@ -248,7 +273,56 @@
       <option name="project" value="LOCAL" />
       <updated>1614956657252</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="library configuration">
+      <created>1614957968785</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614957968785</updated>
+    </task>
+    <task id="LOCAL-00012" summary="library configuration">
+      <created>1614958446067</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1614958446067</updated>
+    </task>
+    <task id="LOCAL-00013" summary="library configuration">
+      <created>1614958653242</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1614958653242</updated>
+    </task>
+    <task id="LOCAL-00014" summary="library configuration">
+      <created>1614958751356</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614958751356</updated>
+    </task>
+    <task id="LOCAL-00015" summary="library configuration">
+      <created>1614958850938</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1614958850938</updated>
+    </task>
+    <task id="LOCAL-00016" summary="library configuration">
+      <created>1614959164797</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1614959164797</updated>
+    </task>
+    <task id="LOCAL-00017" summary="library configuration">
+      <created>1614959284264</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1614959284264</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +374,8 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$dataset_tools.coverage" NAME="dataset_tools Coverage Results" MODIFIED="1614867883459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tools" />
     <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$dataset_handler_test.coverage" NAME="dataset_handler_test Coverage Results" MODIFIED="1614764706201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$mining_test.coverage" NAME="mining_test Coverage Results" MODIFIED="1614956638626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$handler.coverage" NAME="handler Coverage Results" MODIFIED="1614959277730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mining_groups_behavior" />
+    <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$mining_test.coverage" NAME="mining_test Coverage Results" MODIFIED="1614958012115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$sankey_generator_test.coverage" NAME="sankey_generator_test Coverage Results" MODIFIED="1614952034964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>
