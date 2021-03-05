@@ -1,5 +1,5 @@
-from mining_groups_behavior.core.data_api.dataset_handler import DatasetHandler
-from mining_groups_behavior.core.mining.LcmHandler import LcmHandler
+from mining_groups_behavior.dataset_handler import DatasetHandler
+from mining_groups_behavior.LcmHandler import LcmHandler
 from tests.mining_test import experiment_name
 
 
