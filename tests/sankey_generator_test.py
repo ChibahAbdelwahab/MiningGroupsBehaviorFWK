@@ -1,7 +1,7 @@
 import os
 
 from mining_groups_behavior.sankey_generator import SankeyGenerator
-from mining_groups_behavior.settings.settings import GROUPS_FOLDER
+from mining_groups_behavior.settings import GROUPS_FOLDER
 
 
 def test_sankey_generator():

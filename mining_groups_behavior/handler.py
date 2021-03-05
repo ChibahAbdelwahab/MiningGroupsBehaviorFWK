@@ -22,3 +22,7 @@ def run_mining():
     exp_params["sankey_experiment_id"] = experiment_name(exp_params)
     exp_params["sankey_experiment_id"].replace("'", '')
     lh.run(df, frequency, support, itemsets_size, properties, exp_params, overwrite=False)
+
+
+if __name__ == "__main__":
+    run_mining()

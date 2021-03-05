@@ -1,7 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-from mining_groups_behavior.settings.settings import DATABASE_URL
+from mining_groups_behavior.settings import DATABASE_URL
 
 
 class DatasetHandler:

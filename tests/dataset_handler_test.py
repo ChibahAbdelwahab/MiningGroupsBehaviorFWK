@@ -1,7 +1,7 @@
 import pytest
 
 from mining_groups_behavior.dataset_handler import DatasetHandler
-from mining_groups_behavior.settings.settings import TRANSACTIONS_TABLE_FIELDS
+from mining_groups_behavior.settings import TRANSACTIONS_TABLE_FIELDS
 
 
 def test_data():

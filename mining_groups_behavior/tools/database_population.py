@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 
 from settings.settings import CUSTOMERS_TABLE_FIELDS, ITEMS_TABLE_FIELDS, TRANSACTIONS_TABLE_FIELDS
 
-from mining_groups_behavior.settings.settings import DATABASE_URL
+from mining_groups_behavior.settings import DATABASE_URL
 
 engine = create_engine(DATABASE_URL)
 

@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
 
-from mining_groups_behavior.settings import settings
-from mining_groups_behavior.settings.settings import SANKEY_TEMPLATE, LINKS_FOLDER
+from mining_groups_behavior import settings
+from mining_groups_behavior.settings import SANKEY_TEMPLATE, LINKS_FOLDER
 from mining_groups_behavior.tools.demographics import extract_demographics
 from mining_groups_behavior.tools.lcm_tools import read_lcm_output
 from mining_groups_behavior.tools.sankey_tools import label_groups

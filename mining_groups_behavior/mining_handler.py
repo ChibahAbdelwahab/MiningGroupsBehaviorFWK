@@ -4,7 +4,7 @@ import sys
 import pandas as pd
 
 from mining_groups_behavior.dataset_handler import DatasetHandler
-from mining_groups_behavior.settings.settings import *
+from mining_groups_behavior.settings import *
 from mining_groups_behavior.tools.dataset_tools import get_items_descriptions
 
 
