@@ -1,7 +1,7 @@
 import pytest
 
-from src.core.data_api.dataset_handler import DatasetHandler
-from src.settings.settings import TRANSACTIONS_TABLE_FIELDS
+from mining_groups_behavior.core.data_api.dataset_handler import DatasetHandler
+from mining_groups_behavior.settings.settings import TRANSACTIONS_TABLE_FIELDS
 
 
 def test_data():

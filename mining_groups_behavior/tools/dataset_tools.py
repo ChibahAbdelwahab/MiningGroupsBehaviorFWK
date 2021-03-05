@@ -1,6 +1,6 @@
 from ast import literal_eval
 
-from src.settings import settings
+from mining_groups_behavior.settings import settings
 
 
 def get_items_descriptions(x, items):

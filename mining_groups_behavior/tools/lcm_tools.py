@@ -3,7 +3,7 @@ from ast import literal_eval
 import pandas as pd
 from sqlalchemy import create_engine
 
-from src.settings.settings import RESULTS_FOLDER, DATABASE_URL
+from mining_groups_behavior.settings.settings import RESULTS_FOLDER, DATABASE_URL
 
 
 def read_lcm_output(input_name, columns=["user_ids", "support", "itemsets", "period", "property_values"]):

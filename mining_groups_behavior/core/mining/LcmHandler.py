@@ -7,10 +7,10 @@ from multiprocessing import Pool
 
 import pandas as pd
 
-from src.core.data_api.dataset_handler import DatasetHandler
-from src.core.mining.mining_handler import MiningHandler
-from src.settings.settings import *
-from src.tools.dataset_tools import get_items_descriptions
+from mining_groups_behavior.core.data_api.dataset_handler import DatasetHandler
+from mining_groups_behavior.core.mining.mining_handler import MiningHandler
+from mining_groups_behavior.settings.settings import *
+from mining_groups_behavior.tools.dataset_tools import get_items_descriptions
 
 
 class LcmHandler(MiningHandler):

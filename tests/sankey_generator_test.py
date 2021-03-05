@@ -2,8 +2,8 @@ import os
 
 import pytest
 
-from src.core.data_api.sankey_generator import SankeyGenerator
-from src.settings.settings import GROUPS_FOLDER
+from mining_groups_behavior.core.data_api.sankey_generator import SankeyGenerator
+from mining_groups_behavior.settings.settings import GROUPS_FOLDER
 
 
 def test_sankey_generator():

@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 
-from src.settings.settings import RESULTS_FOLDER, DATABASE_URL
+from mining_groups_behavior.settings.settings import RESULTS_FOLDER, DATABASE_URL
 
 
 class MiningHandler:

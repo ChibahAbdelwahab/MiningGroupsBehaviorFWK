@@ -7,14 +7,14 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
 
-from src.core.data_api.dataset_handler import DatasetHandler
-from src.settings import settings
-from src.settings.settings import STATS_FOLDER, GROUPS_DEMOGRAPHICS, SANKEY_TEMPLATE, LABELED_LINKS_FOLDER, \
+from mining_groups_behavior.core.data_api.dataset_handler import DatasetHandler
+from mining_groups_behavior.settings import settings
+from mining_groups_behavior.settings.settings import STATS_FOLDER, GROUPS_DEMOGRAPHICS, SANKEY_TEMPLATE, LABELED_LINKS_FOLDER, \
     LINKS_FOLDER, GROUPS_FOLDER
-from src.tools.dataset_tools import get_items_descriptions
-from src.tools.demographics import extract_demographics
-from src.tools.lcm_tools import read_lcm_output
-from src.tools.sankey_tools import label_groups
+from mining_groups_behavior.tools.dataset_tools import get_items_descriptions
+from mining_groups_behavior.tools.demographics import extract_demographics
+from mining_groups_behavior.tools.lcm_tools import read_lcm_output
+from mining_groups_behavior.tools.sankey_tools import label_groups
 
 
 def profileit(func):
