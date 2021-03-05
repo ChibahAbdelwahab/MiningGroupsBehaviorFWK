@@ -7,4 +7,5 @@ setup(
     description='Mining groups behavior',
     author='Abdelouahab Chibah',
     license='',
+    include_package_data=True
 )
