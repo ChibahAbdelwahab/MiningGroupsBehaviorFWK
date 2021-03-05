@@ -44,7 +44,7 @@ class LcmHandler(MiningHandler):
                 pd.DataFrame(ii.index).to_csv(index_file_name, header=False, index=None)
                 yield str(split_name)
 
-    def reformat_output(self, raw_result, split_name):
+    def reformat_output(self, raw_result, split_name, exp_params):
         """
         Reformat default output of lcm  to a dataframe with structure : min_support,itemsets,users
         """
@@ -53,7 +53,7 @@ class LcmHandler(MiningHandler):
         items = self.dh.get_items()
         output = pd.DataFrame([raw_result[0::2], raw_result[1::2]]).T
         output = pd.concat([output.drop(0, axis=1), output[0].str.split('\(([0-9]+)\)', expand=True).drop(0, axis=1)],
-                           axis=1)
+                           axis=1).dropna()
         split_name = split_name.split("/")[-1]  # remove temp folder from name
         output["period"] = split_name.split("_")[0]
         output["property_values"] = "_".join(split_name.split("_")[1:]).split("#")[0]
@@ -63,6 +63,10 @@ class LcmHandler(MiningHandler):
             lambda x: get_items_descriptions(x, items))
         indexes = pd.read_csv(f'{TMP_FOLDER}/index/{split_name}', header=None)[0].to_dict()
         output["customer_id"] = output["customer_id"].fillna("").map(lambda x: [indexes[int(i)] for i in x.split()])
+        output = output[output.support != ""]
+        for i in exp_params:
+            output[i] = exp_params[i]
+
         return output
 
     def run_lcm(self, split_name, itemsets_size, support, exp_params):
@@ -97,10 +101,7 @@ class LcmHandler(MiningHandler):
         if "there is no frequent item" in str(result) or result == []:
             print("No itemset", split_name)
             return
-
-        df = self.reformat_output(result, split_name)
-        for i in exp_params:
-            df[i] = exp_params[i]
+        df = self.reformat_output(result, split_name, exp_params)
         df.to_sql("Groups", if_exists="append", index=None, con=self.engine)
         return split_name
 
@@ -130,5 +131,6 @@ class LcmHandler(MiningHandler):
 
         pd.DataFrame([exp_params]).to_sql("sankey_experiment", if_exists="replace", index=False, con=self.engine)
         data_generator = self.dataset_property_split(df, frequency, properties, support)
+        exp_params = {"sankey_experiment_id": exp_params["sankey_experiment_id"]}
         for i in data_generator:
             self.run_lcm(i, itemsets_size=itemsets_size, support=support, exp_params=exp_params)

@@ -7,7 +7,9 @@ def get_items_descriptions(x, items):
     """
     Returns a list of items description from a list of items ids
     """
-    return items.loc[[int(i) for i in x if i != 'None' and i in items.index]].description.tolist()
+    result = items.loc[[int(i) for i in x if i != 'None' and int(i) in items.index]].description.tolist()
+    result = [str(j).replace("None", "") for j in result]
+    return result
 
 
 if __name__ == "__main__":

@@ -1,6 +1,3 @@
-import os
-from functools import partial
-
 import pytest
 
 # @pytest.mark.parametrize("frequency, min_support, properties,itemsets_size",
@@ -36,8 +33,7 @@ import pytest
 #     lh.run_lcm(splits[1], itemsets_size, min_support, output_file)
 #     assert os.path.isfile(output_file)
 from src.core.data_api.dataset_handler import DatasetHandler
-from src.core.mining.LcmHandler import LcmHandler, NB_THREADS
-from src.tools.lcm_tools import read_lcm_output
+from src.core.mining.LcmHandler import LcmHandler
 
 
 @pytest.mark.parametrize("frequency, min_support, properties,itemsets_size",
