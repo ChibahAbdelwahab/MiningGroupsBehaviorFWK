@@ -33,7 +33,7 @@ import pytest
 #     lh.run_lcm(splits[1], itemsets_size, min_support, output_file)
 #     assert os.path.isfile(output_file)
 from mining_groups_behavior.dataset_handler import DatasetHandler
-from mining_groups_behavior.LcmHandler import LcmHandler
+from mining_groups_behavior.mining_handler import LcmHandler
 
 
 @pytest.mark.parametrize("frequency, min_support, properties,itemsets_size",
