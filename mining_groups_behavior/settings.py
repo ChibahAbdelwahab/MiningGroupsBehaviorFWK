@@ -7,7 +7,7 @@ NB_THREADS = 8
 # Path
 OUTPUT_FOLDER = os.environ.get('MGB_TMP_FOLDER', '../output')
 TMP_FOLDER = os.path.abspath(f"{OUTPUT_FOLDER}/tmp")
-LCM_EXECUTABLE = os.path.abspath("../bin/lcm")
+LCM_EXECUTABLE = os.path.abspath("lcm")
 RESULTS_FOLDER = os.path.abspath(f"{OUTPUT_FOLDER}/results")
 STATS_FOLDER = os.path.abspath(f'{OUTPUT_FOLDER}/plots/stats')
 LINKS_FOLDER = os.path.abspath(f'{OUTPUT_FOLDER}/plots/links')

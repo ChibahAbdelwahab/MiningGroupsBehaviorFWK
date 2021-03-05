@@ -24,5 +24,4 @@ def run_mining():
     lh.run(df, frequency, support, itemsets_size, properties, exp_params, overwrite=False)
 
 
-if __name__ == "__main__":
-    run_mining()
+
