@@ -26,3 +26,4 @@ GROUPS_DEMOGRAPHICS = ["STATION_MGT_TYPE", "DEPARTEMENT"]
 
 DATABASE_URL = "postgresql://miningAgent:@localhost/QeNoBi"
 engine = create_engine(DATABASE_URL)
+LINKS_TABLE = "Links"

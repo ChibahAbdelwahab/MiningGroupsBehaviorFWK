@@ -85,7 +85,7 @@ class SankeyGenerator:
             df_groups[demographics] = df_groups.property_values.str.split("_", expand=True)
         links = self.make_labeled_links(input_file, links, df_groups)
         links["sankey_experiment_id"] = exp_name
-        links.to_sql("Links", index=False, if_exists="replace", con=settings.engine)
+        links.to_sql(settings.LINKS_TABLE, index=False, if_exists="replace", con=settings.engine)
         print("Done", input_file)
 
     def make_labeled_links(self, file_name, links, groups):
