@@ -1,13 +1,17 @@
 import os
 
 from sqlalchemy import create_engine
+from pathlib import Path
 
 NB_THREADS = 8
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 # Path
-OUTPUT_FOLDER = os.environ.get('MGB_TMP_FOLDER', '../output')
+LCM_EXECUTABLE = os.path.join(BASE_DIR, "lcm")
+
+OUTPUT_FOLDER = os.path.join(BASE_DIR, 'output')
 TMP_FOLDER = os.path.abspath(f"{OUTPUT_FOLDER}/tmp")
-LCM_EXECUTABLE = os.path.abspath("lcm")
 RESULTS_FOLDER = os.path.abspath(f"{OUTPUT_FOLDER}/results")
 STATS_FOLDER = os.path.abspath(f'{OUTPUT_FOLDER}/plots/stats')
 LINKS_FOLDER = os.path.abspath(f'{OUTPUT_FOLDER}/plots/links')
@@ -24,6 +28,6 @@ ITEMS_TABLE_FIELDS = ["description", "item_id"]
 
 GROUPS_DEMOGRAPHICS = ["STATION_MGT_TYPE", "DEPARTEMENT"]
 
-DATABASE_URL = "postgresql://miningAgent:@localhost/QeNoBi"
+DATABASE_URL = os.environ.get("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 LINKS_TABLE = "Links"

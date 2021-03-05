@@ -1,3 +1,4 @@
+from mining_groups_behavior import settings
 from mining_groups_behavior.dataset_handler import DatasetHandler
 from mining_groups_behavior.mining_handler import LcmHandler
 from tests.mining_test import experiment_name
@@ -24,4 +25,5 @@ def run_mining():
     lh.run(df, frequency, support, itemsets_size, properties, exp_params, overwrite=False)
 
 
-
+if __name__ == "__main__":
+    print(settings.TMP_FOLDER)
