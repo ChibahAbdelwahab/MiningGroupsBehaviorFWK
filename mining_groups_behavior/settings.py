@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 NB_THREADS = 8
 
 # Path
-OUTPUT_FOLDER = '../output'
+OUTPUT_FOLDER = os.environ.get('MGB_TMP_FOLDER', '../output')
 TMP_FOLDER = os.path.abspath(f"{OUTPUT_FOLDER}/tmp")
 LCM_EXECUTABLE = os.path.abspath("../bin/lcm")
 RESULTS_FOLDER = os.path.abspath(f"{OUTPUT_FOLDER}/results")
