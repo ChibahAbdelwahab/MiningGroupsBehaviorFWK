@@ -10,6 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Path
 LCM_EXECUTABLE = os.path.join(BASE_DIR, "bin/lcm")
 OUTPUT_FOLDER = os.environ.get("OUTPUT_PATH")
+assert OUTPUT_FOLDER is not None
 TMP_FOLDER = os.path.abspath(f"{OUTPUT_FOLDER}/tmp")
 RESULTS_FOLDER = os.path.abspath(f"{OUTPUT_FOLDER}/results")
 STATS_FOLDER = os.path.abspath(f'{OUTPUT_FOLDER}/plots/stats')

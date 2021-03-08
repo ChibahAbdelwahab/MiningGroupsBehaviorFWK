@@ -5,8 +5,9 @@ from mining_groups_behavior.settings import DATABASE_URL
 
 
 class DatasetHandler:
-    def __init__(self):
+    def __init__(self, dataset):
         self.engine = create_engine(DATABASE_URL)
+        self.dataset = dataset
 
     def split_dataset(input_file, frequency, dataset_filter):
         """Split initial dataset to multiple files according to frequency
@@ -31,10 +32,12 @@ class DatasetHandler:
 
     def get_data(self):  # TODO use ORM instead of queries
         """ Load transaction from Database"""
-        query = """
+        # TODO format query against sql injection
+        query = f"""
         Select * from "transactions" t 
         join "customers" c on c."customer_id"=t."customer_id"
         join "stations"  s on t."station_id"=s."station_id"
+        where dataset='{self.dataset}'
         """
         df = pd.read_sql(query, con=self.engine).drop_duplicates()
         df.index = pd.to_datetime(df.transaction_date)
@@ -43,4 +46,9 @@ class DatasetHandler:
         return df
 
     def get_items(self):
-        return pd.read_sql_table("items", con=self.engine).set_index("item_id")
+        # TODO format query against sql injection
+        query = f"""
+            Select * from items where dataset='{self.dataset}' 
+        
+        """
+        return pd.read_sql(query, con=self.engine).set_index("item_id")
