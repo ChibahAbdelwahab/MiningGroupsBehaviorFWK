@@ -165,7 +165,8 @@ class LcmHandler(MiningHandler):
         exp_id = exp_params["sankey_experiment_id"]
 
         if overwrite:
-            self.engine.execute(f""" Delete from "Groups" where sankey_experiment_id='{exp_id}' """)
+            self.engine.execute(f""" Delete from "{GROUPS_TABLE}" where sankey_experiment_id='{exp_id}' """)
+            self.engine.execute(f""" Delete from "{LINKS_TABLE}" where sankey_experiment_id='{exp_id}' """)
 
         pd.DataFrame([exp_params]).to_sql(SANKEY_EXPERIMENT, if_exists="append", index=False, con=self.engine)
         data_generator = self.dataset_property_split(df, frequency, properties, support)

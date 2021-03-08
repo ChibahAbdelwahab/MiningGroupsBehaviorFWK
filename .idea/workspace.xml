@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f328d027-7008-460f-9a3f-ce64fe1c2556" name="Default Changelist" comment="db fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/tools/lcm_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/tools/lcm_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/mining_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/mining_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +202,7 @@
       <workItem from="1614871630539" duration="649000" />
       <workItem from="1614930856030" duration="615000" />
       <workItem from="1614939981614" duration="12822000" />
-      <workItem from="1615196403591" duration="7669000" />
+      <workItem from="1615196403591" duration="8711000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1614697547412</created>
@@ -386,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615205897339</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="db fix">
+      <created>1615206087658</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1615206087658</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
