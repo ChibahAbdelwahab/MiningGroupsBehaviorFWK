@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f328d027-7008-460f-9a3f-ce64fe1c2556" name="Default Changelist" comment="db fix">
+    <list default="true" id="f328d027-7008-460f-9a3f-ce64fe1c2556" name="Default Changelist" comment="fix parameters call">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +202,7 @@
       <workItem from="1614871630539" duration="649000" />
       <workItem from="1614930856030" duration="615000" />
       <workItem from="1614939981614" duration="12822000" />
-      <workItem from="1615196403591" duration="10282000" />
+      <workItem from="1615196403591" duration="10910000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1614697547412</created>
@@ -414,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615207416453</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix parameters call">
+      <created>1615213872726</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1615213872726</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +447,8 @@
     <MESSAGE value="library configuration" />
     <MESSAGE value="database configuration&#10;Input parameters for sankey creation" />
     <MESSAGE value="db fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="db fix" />
+    <MESSAGE value="fix parameters call" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix parameters call" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
