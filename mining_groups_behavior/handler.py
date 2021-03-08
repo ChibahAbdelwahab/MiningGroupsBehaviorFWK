@@ -6,7 +6,7 @@ from tests.mining_test import experiment_name
 
 def run_mining(dataset, frequency, support, properties, itemsets_size):
     dh = DatasetHandler(dataset=dataset)
-    lh = LcmHandler()
+    lh = LcmHandler(dh)
     df = dh.get_data()
     df = df.rename(columns={"article_id": "item_id"})
     exp_params = {

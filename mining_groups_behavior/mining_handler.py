@@ -11,7 +11,8 @@ from mining_groups_behavior.tools.dataset_tools import get_items_descriptions
 class MiningHandler:
     """ This Class gives an api to use LCM algorithm """
 
-    def __init__(self):
+    def __init__(self, dh=None):
+        self.dh = None
         self.engine = create_engine(DATABASE_URL)
 
     def dataset_property_split(self, df, frequency, properties, min_support, groupby_property="customer_id",
@@ -88,7 +89,6 @@ class LcmHandler(MiningHandler):
         Reformat default output of lcm  to a dataframe with structure : min_support,itemsets,users
         """
         # TODO remove dependency to DatasetHandler
-        self.dh = DatasetHandler()
         items = self.dh.get_items()
         output = pd.DataFrame([raw_result[0::2], raw_result[1::2]]).T
         output = pd.concat([output.drop(0, axis=1), output[0].str.split('\(([0-9]+)\)', expand=True).drop(0, axis=1)],
