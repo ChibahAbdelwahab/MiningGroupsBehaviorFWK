@@ -3,14 +3,14 @@ from ast import literal_eval
 import pandas as pd
 from sqlalchemy import create_engine
 
-from mining_groups_behavior.settings import DATABASE_URL
+from mining_groups_behavior.settings import DATABASE_URL, GROUPS_TABLE
 
 
 def read_lcm_output(input_name, columns=["user_ids", "support", "itemsets", "period", "property_values"]):
     """Read and restructure LCM output file,rename columns output a df """
     engine = create_engine(DATABASE_URL)
     query = f"""
-            Select * from "Groups" where sankey_experiment_id='{input_name}'
+            Select * from "{GROUPS_TABLE}" where sankey_experiment_id='{input_name}'
     """
     df = pd.read_sql(query, con=engine)
     df = df.rename(columns={"customer_id": "user_ids"})
