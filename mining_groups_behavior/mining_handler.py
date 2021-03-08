@@ -3,7 +3,6 @@ import sys
 
 import pandas as pd
 
-from mining_groups_behavior.dataset_handler import DatasetHandler
 from mining_groups_behavior.settings import *
 from mining_groups_behavior.tools.dataset_tools import get_items_descriptions
 
@@ -141,7 +140,7 @@ class LcmHandler(MiningHandler):
             print("No itemset", split_name)
             return
         df = self.reformat_output(result, split_name, exp_params)
-        df.to_sql("Groups", if_exists="append", index=None, con=self.engine)
+        df.to_sql(GROUPS_TABLE, if_exists="append", index=None, con=self.engine)
         return split_name
 
     def linear_closed_itemset_miner(self, df, frequency, min_support, itemsets_size, properties):
@@ -168,7 +167,7 @@ class LcmHandler(MiningHandler):
         if overwrite:
             self.engine.execute(f""" Delete from "Groups" where sankey_experiment_id='{exp_id}' """)
 
-        pd.DataFrame([exp_params]).to_sql("sankey_experiment", if_exists="replace", index=False, con=self.engine)
+        pd.DataFrame([exp_params]).to_sql(SANKEY_EXPERIMENT, if_exists="append", index=False, con=self.engine)
         data_generator = self.dataset_property_split(df, frequency, properties, support)
         exp_params = {"sankey_experiment_id": exp_params["sankey_experiment_id"]}
         for i in data_generator:
