@@ -12,7 +12,7 @@ class MiningHandler:
     """ This Class gives an api to use LCM algorithm """
 
     def __init__(self, dh=None):
-        self.dh = None
+        self.dh = dh
         self.engine = create_engine(DATABASE_URL)
 
     def dataset_property_split(self, df, frequency, properties, min_support, groupby_property="customer_id",
