@@ -25,7 +25,4 @@ def run_mining(dataset, frequency, support, properties, itemsets_size, overwrite
     sg.sankey_preprocessing(properties, exp_name=exp_params["sankey_experiment_id"],
                             user_apparition_threshold=1,
                             keep_all_groups_in_periods=[])
-
-
-if __name__ == "__main__":
-    run_mining("Retail", "4M", 5, ["sex"], [1, None])
+    return exp_params["sankey_experiment_id"]
