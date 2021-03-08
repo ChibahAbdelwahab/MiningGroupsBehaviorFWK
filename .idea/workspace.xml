@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f328d027-7008-460f-9a3f-ce64fe1c2556" name="Default Changelist" comment="database configuration&#10;Input parameters for sankey creation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/mining_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/mining_handler.py" afterDir="false" />
+    <list default="true" id="f328d027-7008-460f-9a3f-ce64fe1c2556" name="Default Changelist" comment="db fix">
       <change beforePath="$PROJECT_DIR$/mining_groups_behavior/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +201,7 @@
       <workItem from="1614871630539" duration="649000" />
       <workItem from="1614930856030" duration="615000" />
       <workItem from="1614939981614" duration="12822000" />
-      <workItem from="1615196403591" duration="4854000" />
+      <workItem from="1615196403591" duration="4916000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1614697547412</created>
@@ -359,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615200698330</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="db fix">
+      <created>1615202950992</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1615202950992</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +389,8 @@
     <MESSAGE value="added setup file" />
     <MESSAGE value="library configuration" />
     <MESSAGE value="database configuration&#10;Input parameters for sankey creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="database configuration&#10;Input parameters for sankey creation" />
+    <MESSAGE value="db fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="db fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

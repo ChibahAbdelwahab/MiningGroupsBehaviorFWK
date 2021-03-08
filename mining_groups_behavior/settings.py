@@ -29,7 +29,7 @@ GROUPS_DEMOGRAPHICS = ["STATION_MGT_TYPE", "DEPARTEMENT"]
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://miningAgent:@localhost/QeNoBi")
 engine = create_engine(DATABASE_URL)
-TABLES_PREFIX = os.environ("OUTPUT_TABLES_PREFIX", "")
+TABLES_PREFIX = os.environ.get("OUTPUT_TABLES_PREFIX", "")
 if TABLES_PREFIX == "":
     TABLES_PREFIX += "_"
 LINKS_TABLE = TABLES_PREFIX + "links"
