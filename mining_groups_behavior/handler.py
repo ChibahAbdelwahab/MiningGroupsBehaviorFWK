@@ -5,7 +5,7 @@ from mining_groups_behavior.sankey_generator import SankeyGenerator
 from tests.mining_test import experiment_name
 
 
-def run_mining(dataset, frequency, support, properties, itemsets_size):
+def run_mining(dataset, frequency, support, properties, itemsets_size, overwrite=False):
     dh = DatasetHandler(dataset=dataset)
     lh = LcmHandler(dh)
     df = dh.get_data()
@@ -19,7 +19,7 @@ def run_mining(dataset, frequency, support, properties, itemsets_size):
     }
     exp_params["sankey_experiment_id"] = experiment_name(exp_params)
     exp_params["sankey_experiment_id"].replace("'", '')
-    lh.run(df, frequency, support, itemsets_size, properties, exp_params, overwrite=False)
+    lh.run(df, frequency, support, itemsets_size, properties, exp_params, overwrite=overwrite)
 
     sg = SankeyGenerator()
     sg.sankey_preprocessing(properties, exp_name=exp_params["sankey_experiment_id"],
