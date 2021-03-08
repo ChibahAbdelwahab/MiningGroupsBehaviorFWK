@@ -28,14 +28,13 @@ class SankeyGenerator:
             yield from product(prev, i, [index])
             prev = i
 
-    def sankey_preprocessing(self, input_file, exp_name, user_apparition_threshold=0,
+    def sankey_preprocessing(self, demographics, exp_name, user_apparition_threshold=0,
                              user_nunique_periods_threshold=1, keep_all_groups_in_periods=[]):
 
         le = LabelEncoder()
-        demographics = extract_demographics(input_file)
+        demographics
         df = read_lcm_output(exp_name).sort_values("period").reset_index(drop=True)
         print("#Groups", df.shape[0])
-        file = f'{LINKS_FOLDER}/{input_file}'
         mlb = MultiLabelBinarizer(sparse_output=True)
         df_users_apparition = mlb.fit_transform(df.user_ids.tolist()).astype(bool)
         df_users_apparition = pd.DataFrame(df_users_apparition.toarray(), columns=mlb.classes_)
@@ -67,12 +66,12 @@ class SankeyGenerator:
             df_groups[demographics[0]] = df_groups.property_values
         else:
             df_groups[demographics] = df_groups.property_values.str.split("_", expand=True)
-        links = self.make_labeled_links(input_file, links, df_groups)
+        links = self.make_labeled_links(links, df_groups)
         links["sankey_experiment_id"] = exp_name
         links.to_sql(settings.LINKS_TABLE, index=False, if_exists="replace", con=settings.engine)
-        print("Done", input_file)
+        print("Done")
 
-    def make_labeled_links(self, file_name, links, groups):
+    def make_labeled_links(self, links, groups):
         links["user_id"] = links["user_id"].apply(lambda x: [int(i) for i in str(x).split(",")])
         links_extra = links.merge(groups[["user_ids"]], left_on="source", right_index=True) \
             .merge(groups[["user_ids"]], left_on="target", right_index=True)

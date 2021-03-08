@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f328d027-7008-460f-9a3f-ce64fe1c2556" name="Default Changelist" comment="db fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/sankey_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/sankey_generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +203,7 @@
       <workItem from="1614871630539" duration="649000" />
       <workItem from="1614930856030" duration="615000" />
       <workItem from="1614939981614" duration="12822000" />
-      <workItem from="1615196403591" duration="5798000" />
+      <workItem from="1615196403591" duration="7477000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1614697547412</created>
@@ -372,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615203006627</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="db fix">
+      <created>1615204061175</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1615204061175</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +434,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$dataset_tools.coverage" NAME="dataset_tools Coverage Results" MODIFIED="1614867883459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/tools" />
     <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$dataset_handler_test.coverage" NAME="dataset_handler_test Coverage Results" MODIFIED="1614764706201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$handler.coverage" NAME="handler Coverage Results" MODIFIED="1614959277730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mining_groups_behavior" />
+    <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$handler.coverage" NAME="handler Coverage Results" MODIFIED="1615205848431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mining_groups_behavior" />
     <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$mining_test.coverage" NAME="mining_test Coverage Results" MODIFIED="1614958012115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/MiningGroupsBehaviorFWK$sankey_generator_test.coverage" NAME="sankey_generator_test Coverage Results" MODIFIED="1614952034964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
