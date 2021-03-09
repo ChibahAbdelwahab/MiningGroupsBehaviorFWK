@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f328d027-7008-460f-9a3f-ce64fe1c2556" name="Default Changelist" comment="fix parameters call">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mining_groups_behavior/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_groups_behavior/handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mining_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/mining_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mining_groups_behavior" />
+    <property name="last_opened_file_path" value="$USER_HOME$/repos/dataimpact-scraping" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -202,7 +203,8 @@
       <workItem from="1614871630539" duration="649000" />
       <workItem from="1614930856030" duration="615000" />
       <workItem from="1614939981614" duration="12822000" />
-      <workItem from="1615196403591" duration="10910000" />
+      <workItem from="1615196403591" duration="11576000" />
+      <workItem from="1615226659824" duration="1864000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1614697547412</created>
@@ -421,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615213872726</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fix parameters call">
+      <created>1615214487874</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1615214487874</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,13 +469,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/mining_test.py</url>
-          <line>55</line>
+          <line>50</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mining_groups_behavior/handler.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -33,6 +33,7 @@ import pytest
 #     lh.run_lcm(splits[1], itemsets_size, min_support, output_file)
 #     assert os.path.isfile(output_file)
 from mining_groups_behavior.dataset_handler import DatasetHandler
+from mining_groups_behavior.handler import experiment_name
 from mining_groups_behavior.mining_handler import LcmHandler
 
 
@@ -45,12 +46,6 @@ def test_run_multi_thread_lcm(frequency, min_support, properties, itemsets_size)
     df = dh.get_data()
     output_file = lh.format_output_name(frequency, min_support, itemsets_size, properties)
     lh.multithread_lcm(df, frequency, min_support, itemsets_size, properties, output_file)
-
-
-def experiment_name(exp_params):
-    name = "_".join(f"{j}" for i, j in exp_params.items())
-    name = name.replace("'", "").replace('"', "")
-    return name
 
 
 if __name__ == '__main__':
