@@ -17,7 +17,6 @@ def run_mining(dataset, frequency, support, properties, itemsets_size, overwrite
         "itemsets_size": str(itemsets_size),
     }
     exp_params["sankey_experiment_id"] = experiment_name(exp_params)
-    exp_params["sankey_experiment_id"]
     lh.run(df, frequency, support, itemsets_size, properties, exp_params, overwrite=overwrite)
 
     sg = SankeyGenerator()
