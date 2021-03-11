@@ -6,8 +6,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
 
 from mining_groups_behavior import settings
-from mining_groups_behavior.settings import SANKEY_TEMPLATE, LINKS_FOLDER
-from mining_groups_behavior.tools.demographics import extract_demographics
+from mining_groups_behavior.settings import SANKEY_TEMPLATE
 from mining_groups_behavior.tools.lcm_tools import read_lcm_output
 from mining_groups_behavior.tools.sankey_tools import label_groups
 
@@ -70,6 +69,7 @@ class SankeyGenerator:
         links["sankey_experiment_id"] = exp_name
         print("Saving sankey links to DB", links.shape[0])
         links.to_sql(settings.LINKS_TABLE, index=False, if_exists="append", con=settings.engine)
+        settings.engine.dispose()
         print("Done 2 ")
 
     def make_labeled_links(self, links, groups):
