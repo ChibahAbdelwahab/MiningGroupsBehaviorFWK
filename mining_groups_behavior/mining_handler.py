@@ -131,7 +131,7 @@ class LcmHandler(MiningHandler):
         else:
             command = f"""{LCM_EXECUTABLE} C_QI -l {itemsets_size[0]} -u {itemsets_size[1]} "{split_name}" {support} -"""
         try:
-            result = subprocess.check_output(command, shell=True).decode(sys.stdout.encoding).split('\n')
+            result = subprocess.check_output(command    , shell=True).decode(sys.stdout.encoding).split('\n')
         except subprocess.CalledProcessError:
             print("No itemset", split_name)
             return

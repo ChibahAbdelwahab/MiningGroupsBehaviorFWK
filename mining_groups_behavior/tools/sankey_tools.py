@@ -5,5 +5,5 @@ def label_groups(x):
             return "S"  # 'stable'
         return "G"  # "grows"
     if len(x["target_users"]) == len(x["intersection"]):
-        return "Su"  # "subset"
-    return "SG"  # "subset_grows"
+        return "ST"  # "Split"
+    return "M"  # "Merge"
