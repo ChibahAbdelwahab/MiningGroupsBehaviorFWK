@@ -69,6 +69,7 @@ class SankeyGenerator:
         links["sankey_experiment_id"] = exp_name
         print("Saving sankey links to DB", links.shape[0])
         links.to_sql(settings.LINKS_TABLE, index=False, if_exists="append", con=settings.engine)
+        print(links.label.unique())
         settings.engine.dispose()
         print("Done 2 ")
 
